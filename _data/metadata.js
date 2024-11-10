@@ -38,7 +38,7 @@ export default {
                 link: "https://fosstodon.org/@eleventy"
               },
               {
-                icon: "fa-discord",
+                icon: "discord",
                 description: "11ty on Discord",
                 link: "https://www.11ty.dev/blog/discord/"
               },

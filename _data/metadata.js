@@ -38,7 +38,7 @@ export default {
                 link: "https://fosstodon.org/@eleventy"
               },
               {
-                icon: "bluesky",
+                icon: "share-square",
                 description: "11ty on Bluesky",
                 link: "https://bsky.app/profile/11ty.dev"
               },

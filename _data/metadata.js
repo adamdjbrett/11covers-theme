@@ -6,7 +6,7 @@ export default {
 	description: "Captain of the Intrepid-class USS Voyager in 2371",
     avatar: "/img/avatar.jpg",
     cover: "/img/witch-head-brews-baby-stars-1920x1152.jpg",
-    favicon: "/img/favicon.png",
+    favicon: "/img/favicon.ico",
     github_username:  "11ty",
     twitter_username: "eleven_ty",
     facebook_username: "eleven_ty",

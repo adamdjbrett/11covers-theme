@@ -23,42 +23,42 @@ export default {
 	},
 	social: [
               {
-                icon: "globe",
+                icon: "fa-solid fa-globe",
                 description: "Main website",
                 link: "https://www.11ty.dev"
               },
               {
-                icon: "github",
+                icon: "fa-brands fa-github",
                 description: "Follow 11ty on Github",
                 link: "https://github.com/11ty/eleventy/"
               },
               {
-                icon: "mastodon",
+                icon: "fa-brands fa-mastodon",
                 description: "11ty on Mastodon",
                 link: "https://fosstodon.org/@eleventy"
               },
               {
-                icon: "fa-discord",
+                icon: "fa-brands fa-discord",
                 description: "11ty on Discord",
                 link: "https://www.11ty.dev/blog/discord/"
               },
               {
-                icon: "share-square",
+                icon: "fa-solid fa-square-share-nodes",
                 description: "11ty on Bluesky",
                 link: "https://bsky.app/profile/11ty.dev"
               },
               {
-                icon: "youtube",
+                icon: "fa-brands fa-youtube",
                 description: "11ty on YouTube",
                 link: "https://www.youtube.com/c/EleventyVideo"
               },              
               {
-                icon: "twitter",
+                icon: "fa-brands fa-twitter",
                 description: "11ty on Twitter",
                 link: "https://twitter.com/leven_ty"
               },
               {
-                icon: "tags",
+                icon: "fa-solid fa-tags",
                 description: "11ty Blogs",
                 link: "https://www.11ty.dev/blog/"
               }

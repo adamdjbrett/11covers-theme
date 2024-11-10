@@ -43,7 +43,7 @@ export default {
                 link: "https://bsky.app/profile/11ty.dev"
               },
               {
-                icon: "youtube",
+                icon: "youtube-square",
                 description: "11ty on YouTube",
                 link: "https://www.youtube.com/c/EleventyVideo"
               },              {

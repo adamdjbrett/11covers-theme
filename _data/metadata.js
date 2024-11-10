@@ -33,9 +33,14 @@ export default {
                 link: "https://github.com/11ty/eleventy/"
               },
               {
-                icon: "fab fa-2x fa-mastodon",
+                icon: "mastodon",
                 description: "11ty on Mastodon",
                 link: "https://fosstodon.org/@eleventy"
+              },
+              {
+                icon: "fa-discord",
+                description: "11ty on Discord",
+                link: "https://www.11ty.dev/blog/discord/"
               },
               {
                 icon: "share-square",
@@ -46,20 +51,11 @@ export default {
                 icon: "youtube",
                 description: "11ty on YouTube",
                 link: "https://www.youtube.com/c/EleventyVideo"
-              },              {
-                icon: "fab fa-2x fa-discord",
-                description: "11ty on Discord",
-                link: "https://www.11ty.dev/blog/discord/"
-              },
+              },              
               {
                 icon: "twitter",
                 description: "11ty on Twitter",
                 link: "https://twitter.com/leven_ty"
-              },
-              {
-                icon: "codepen",
-                description: "11ty Codepen",
-                link: "https://codepen.io/search/pens?q=11ty"
               },
               {
                 icon: "tags",

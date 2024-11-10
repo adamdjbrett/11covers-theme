@@ -33,7 +33,7 @@ export default {
                 link: "https://github.com/11ty/eleventy/"
               },
               {
-                icon: "mastodon",
+                icon: "fab fa-2x fa-mastodon",
                 description: "11ty on Mastodon",
                 link: "https://fosstodon.org/@eleventy"
               },
@@ -43,11 +43,11 @@ export default {
                 link: "https://bsky.app/profile/11ty.dev"
               },
               {
-                icon: "youtube-square",
+                icon: "youtube",
                 description: "11ty on YouTube",
                 link: "https://www.youtube.com/c/EleventyVideo"
               },              {
-                icon: "discord",
+                icon: "fab fa-2x fa-discord",
                 description: "11ty on Discord",
                 link: "https://www.11ty.dev/blog/discord/"
               },

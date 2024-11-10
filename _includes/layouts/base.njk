@@ -37,18 +37,19 @@
 <link rel="stylesheet" href="/css/main.css">
 <script src="https://kit.fontawesome.com/f7bad4bd2f.js" crossorigin="anonymous"></script>
 <link rel="dns-prefetch" href="https://kit.fontawesome.com/" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 <div class="content">
 {% if metadata.cover %}<img src="{{metadata.cover}}" alt="{{metadata.title}}" id="fullscreen">{% endif %}
 {% if metadata.avatar %}<img src="{{metadata.avatar}}" alt="{{metadata.title}}" id="avatar">{% endif %}
 <h1>{{metadata.title}}</h1><br/>
-<h3>{{metadata.description}}</h3>
+<h2 style="color:white; padding:5px;">{{metadata.description}}</h2>
 </div>
 <ul>
 {% for s in metadata.social %}
 <li>
-<a class="fa fa-2x fa-{{s.icon}}" href="{{s.link}}" aria-hidden="true">
+<a class="{{s.icon}} fa-2x" href="{{s.link}}" aria-hidden="true">
 <span class="description">{{s.description}}</span>
 </a>
 </li>

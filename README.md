@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/572faf52-2e6b-407f-802e-ed9fd561f7b8/deploy-status)](https://app.netlify.com/sites/hilarious-stroopwafel-5543cb/deploys)
+
 # 11ty Cover Theme
 A hopefully stylish 11ty **minor** update to the common cover card theme type. This 11ty theme is based on:
 1. [Front Cover Jekyll Theme](https://github.com/dashingcode/front-cover) by [@dashingcode](https://github.com/dashingcode/front-cover)

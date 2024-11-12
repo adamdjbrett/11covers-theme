@@ -3,9 +3,11 @@ import { feedPlugin } from "@11ty/eleventy-plugin-rss";
 import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import pluginNavigation from "@11ty/eleventy-navigation";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
-
 import pluginFilters from "./_config/filters.js";
-
+import fs from "fs";
+import MinifyCSS from "clean-css";
+import postCSS from 'postcss';
+import purgeCSS from '@fullhuman/postcss-purgecss';
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default async function(eleventyConfig) {
 	// Drafts, see also _data/eleventyDataSchema.js
@@ -14,7 +16,19 @@ export default async function(eleventyConfig) {
 			return false;
 		}
 	});
+eleventyConfig.addTransform('purge-and-inline-css', async (content, outputPath) => {
+  if (process.env.ELEVENTY_ENV !== 'production' || !outputPath.endsWith('.html')) {
+    return content;
+  }
 
+  const purgeCSSResults = await new PurgeCSS().purge({
+    content: [{ raw: content }],
+    css: ['dist/css/index.css','dist/css/main.css'],
+    keyframes: true,
+  });
+
+  return content.replace('<!-- INLINE CSS-->', '<style>' + purgeCSSResults[0].css + '</style>');
+});
 	// Copy the contents of the `public` folder to the output folder
 	// For example, `./public/css/` ends up in `_site/css/`
 	eleventyConfig

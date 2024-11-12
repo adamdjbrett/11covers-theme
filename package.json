@@ -27,12 +27,17 @@
 		"@11ty/eleventy-navigation": "^0.3.5",
 		"@11ty/eleventy-plugin-rss": "^2.0.2",
 		"@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+		"@fullhuman/postcss-purgecss": "^6.0.0",
 		"cross-env": "^7.0.3",
 		"luxon": "^3.5.0",
+		"postcss": "^8.4.49",
 		"zod": "^3.23.8",
 		"zod-validation-error": "^3.3.1"
 	},
 	"dependencies": {
-		"@zachleat/heading-anchors": "^1.0.1"
+		"@zachleat/heading-anchors": "^1.0.1",
+		"clean-css": "^5.3.3",
+		"eleventy-plugin-purgecss": "^0.5.0",
+		"purgecss-from-html": "^6.0.0"
 	}
 }

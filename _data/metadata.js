@@ -24,6 +24,10 @@ export default {
 	social: [
               {
                 icon: "fa-solid fa-globe",
+                description: "proven642e35",
+                link: "proven.lol/642e35"
+              },{
+                icon: "fa-solid fa-globe",
                 description: "Main website",
                 link: "https://www.11ty.dev"
               },

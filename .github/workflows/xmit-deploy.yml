@@ -1,0 +1,83 @@
+name: Deploy Eleventy to XMIT
+
+on:
+  push:
+    branches: ["main", "master"]
+  workflow_dispatch:
+    inputs:
+      site:
+        description: "XMIT site/domain (e.g. example.com)"
+        required: true
+        type: string
+
+concurrency:
+  group: deploy-xmit-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      # Target site/domain for XMIT deploy
+      XMIT_SITE: cover.000000076.xyz@268 
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Eleventy site
+        run: npm run build
+
+      - name: Verify build output
+        run: |
+          if [ ! -d _site ]; then
+            echo "_site directory missing after build" >&2
+            exit 1
+          fi
+          ls -1 _site | head -n 20
+
+      - name: Deploy to XMIT (CLI)
+        env:
+          XMIT_KEY: ${{ secrets.XMIT_KEY }}
+        run: |
+          if [ -z "$XMIT_KEY" ]; then
+            echo "XMIT_KEY secret is not set" >&2
+            exit 1
+          fi
+          # Use manual input when workflow_dispatch triggers this workflow
+          SITE_INPUT="${{ github.event_name == 'workflow_dispatch' && inputs.site || '' }}"
+          if [ -n "$SITE_INPUT" ]; then
+            export XMIT_SITE="$SITE_INPUT"
+          fi
+          if [ -z "$XMIT_SITE" ]; then
+            echo "XMIT site/domain not provided. Set repo Variable 'XMIT_SITE' or pass 'site' input." >&2
+            exit 1
+          fi
+          echo "Deploying _site to $XMIT_SITE via XMIT CLI";
+          npx -y @xmit.co/xmit "$XMIT_SITE" _site || { echo 'XMIT deploy failed' >&2; exit 1; }
+
+      - name: Post-deploy summary
+        run: |
+          echo "Deployment attempt finished for $XMIT_SITE";
+          echo "Visit: https://$XMIT_SITE";
+
+    # Uncomment below for an alternative raw API upload if you have endpoint details
+    # steps:
+    #   - name: Deploy via API (curl)
+    #     run: |
+    #       tar -czf site.tar.gz -C _site .
+    #       curl -f -X POST \
+    #         -H "Authorization: Bearer $XMIT_KEY" \
+    #         -F "bundle=@site.tar.gz" \
+    #         https://api.xmit.example/deploy?site=$XMIT_SITE

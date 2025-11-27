@@ -1,4 +1,5 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/572faf52-2e6b-407f-802e-ed9fd561f7b8/deploy-status)](https://app.netlify.com/sites/hilarious-stroopwafel-5543cb/deploys)
+
+[![Deploy to XMIT](https://github.com/adamdjbrett/11covers-theme/actions/workflows/xmit-deploy.yml/badge.svg)](https://github.com/adamdjbrett/11covers-theme/actions/workflows/xmit-deploy.yml)
 
 # 11ty Cover Theme
 A hopefully stylish 11ty **minor** update to the common cover card theme type. This 11ty theme is based on:
